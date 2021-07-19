@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+body .site-wrapper {
+  color: #fff;
+}
+
+body .site-wrapper header.header-wrapper {
+  background-color: #6A7B76;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 50px 20px;
+}
+
+body .site-wrapper header.header-wrapper .site-logo h1 {
+  margin: 0;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav {
+  cursor: pointer;
+  height: 27px;
+  width: 32px;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::before, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::after {
+  position: absolute;
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  content: '';
+  top: 43px;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::before {
+  top: -8px;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::after {
+  top: 8px;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-line {
+  position: relative;
+  content: '';
+  width: 30px;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li {
+  list-style-type: none;
+  font-size: 1.25em;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li a:hover {
+  color: #f0f0f0;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */
