@@ -20,6 +20,7 @@ body .site-wrapper header.header-wrapper {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 30px 50px 20px;
+  height: 37px;
 }
 
 body .site-wrapper header.header-wrapper .site-logo h1 {
@@ -30,6 +31,7 @@ body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav {
   cursor: pointer;
   height: 27px;
   width: 32px;
+  margin-left: auto;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::before, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::after {
@@ -40,6 +42,14 @@ body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .na
   background-color: #fff;
   content: '';
   top: 43px;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines::before {
@@ -50,37 +60,69 @@ body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .na
   top: 8px;
 }
 
-body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-line {
-  position: relative;
-  content: '';
-  width: 30px;
-  height: 3px;
-  margin-top: 6px;
-  border-radius: 2px;
-  background-color: #fff;
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines.is-clicked {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines.is-clicked::before {
+  top: 0;
+  opacity: 0;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav .nav-lines.is-clicked::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  top: 0;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav:hover .nav-lines, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav:hover .nav-lines::before, body .site-wrapper header.header-wrapper .nav-wrapper nav.nav .hamburger-nav:hover .nav-lines::after {
+  background-color: #e1e8e6;
+  -webkit-transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list {
   padding: 0;
   margin: 0;
-  display: none;
+  opacity: 0;
+  height: 0;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  background-color: #6A7B76;
+  border-radius: 3px;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li {
   list-style-type: none;
   font-size: 1.25em;
+  margin-top: 11px;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li a {
   text-decoration: none;
   color: #fff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li a:hover {
-  color: #f0f0f0;
+  color: #e1e8e6;
 }
 
-.hide {
-  display: none;
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list li:first-child {
+  margin-top: 0;
+}
+
+body .site-wrapper header.header-wrapper .nav-wrapper nav.nav ul.nav-list.show {
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+  padding: 40px;
+  width: 300px;
+  margin-right: -50px;
 }
 /*# sourceMappingURL=styles.css.map */

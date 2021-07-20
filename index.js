@@ -1,8 +1,10 @@
 const hamburgerNav = document.querySelector('.hamburger-nav');
+const navLines = document.querySelector('.nav-lines');
+const nav = document.querySelector('.nav-list');
 
 hamburgerNav.addEventListener('click', function() {
-    // add .hide to navLineTwo
     // divs rotate
+    navLines.classList.toggle('is-clicked');
     // nav shows
-    console.log('hi');
+    nav.classList.toggle('show');
 });
