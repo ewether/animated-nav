@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: "Gotham A", "Gotham B", arial;
     font-weight: 300;
     letter-spacing: 1px;
 
@@ -14,6 +13,7 @@ body {
             display: flex;
             justify-content: space-between;
             padding: 30px 50px 20px;
+            height: 37px;
 
             .site-logo {
 
@@ -30,6 +30,7 @@ body {
                         cursor: pointer;
                         height: 27px;
                         width: 32px;
+                        margin-left: auto;
 
                         .nav-lines, .nav-lines::before, .nav-lines::after {
                             position: absolute;
@@ -39,7 +40,12 @@ body {
                             background-color: #fff;
                             content: '';
                             top: 43px;
+                            transition-property: transform;
+                            transition-duration: 0.15s;
+                            transition-timing-function: ease;
                         }
+
+                        
 
                         .nav-lines::before {
                             top: -8px;
@@ -49,42 +55,72 @@ body {
                             top: 8px;
                         }
 
-                        .nav-line {
-                            position: relative;
-                            content: '';
-                            width: 30px;
-                            height: 3px;
-                            margin-top: 6px;
-                            border-radius: 2px;
-                            background-color: #fff;
+                        .nav-lines.is-clicked {
+                            transform: rotate(45deg);
                         }
+
+                        .nav-lines.is-clicked::before {
+                            top: 0;
+                            opacity: 0;
+                        }
+
+                        .nav-lines.is-clicked::after {
+                            transform: rotate(-90deg);
+                            top: 0;
+                        }
+                    }
+
+                    .hamburger-nav:hover {
+
+                        .nav-lines, .nav-lines::before, .nav-lines::after {
+                            background-color: #e1e8e6;
+                            transition: background-color 0.15s ease;
+                        }
+
                     }
 
                     ul.nav-list {
                         padding: 0;
                         margin: 0;
-                        display: none;
+                        opacity: 0;
+                        height: 0;
+                        transition: 0.15s;
+                        overflow: hidden;
+                        transition: opacity 0.3s ease;
+                        background-color: #6A7B76;
+                        border-radius: 3px;
 
                         li {
                             list-style-type: none;
                             font-size: 1.25em;
+                            margin-top: 11px;
 
                             a {
                                 text-decoration: none;
                                 color: #fff;
+                                transition: color 0.3s ease;
                             }
 
                             a:hover {
-                                color: #f0f0f0;
+                                color: #e1e8e6;
                             }
                         }
+
+                        li:first-child {
+                            margin-top: 0;
+                        }
+                    }
+
+                    ul.nav-list.show {
+                        opacity: 1;
+                        height: auto;
+                        overflow: visible;
+                        padding: 40px;
+                        width: 300px;
+                        margin-right: -50px;
                     }
                 }
             }
         }
     }
-}
-
-.hide {
-    display: none;
 }
